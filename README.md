@@ -34,8 +34,6 @@ interface FlowStageEdge {
 - Scheduled
 - Manual
 
-<br />
-
 #### Flow Termination Conditions
 
 - End of flow
@@ -43,8 +41,6 @@ interface FlowStageEdge {
 - Error
 - Timeout
 - Manual
-
-<br />
 
 #### Flow Pauses and Delay
 
