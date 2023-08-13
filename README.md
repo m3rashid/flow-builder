@@ -2,7 +2,7 @@
 
 Define app flow visually, store it as json and execute it on given triggers.
 
-Inspired from Salesforce flows
+Inspired from Salesforce flows and flow builder
 
 ```ts
 interface Flow {
@@ -27,3 +27,27 @@ interface FlowStageEdge {
   condition: (boolean | (prevData: any) => Promise<boolean>);
 }
 ```
+
+#### Flow Triggers
+
+- Create/Update/Delete on a record
+- Scheduled
+- Manual
+
+<br />
+
+#### Flow Termination Conditions
+
+- End of flow
+- Condition
+- Error
+- Timeout
+- Manual
+
+<br />
+
+#### Flow Pauses and Delay
+
+- Wait for manual approval
+- Wait for any other condition
+- previous stage node not completed yet
