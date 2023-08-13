@@ -1,8 +1,8 @@
 ### Flow Builder
 
-Define app flow visually, store it as json and execute it on given triggers.
+Define app flow visually, store it as json and execute it on given triggers. Inspired from Salesforce flows and flow builder.
 
-Inspired from Salesforce flows and flow builder
+If all the flows in the app is already defined, this is not used (better make it procedural). This is to be used extensively where we need to define the flow on the fly. This also makes the platform more configurable and extensible.
 
 ```ts
 interface Flow {
@@ -47,3 +47,17 @@ interface FlowStageEdge {
 - Wait for manual approval
 - Wait for any other condition
 - previous stage node not completed yet
+
+#### How it is to be executed
+
+- A flow is created and saved to the database
+- All apis run side-effects and cleanups in the background
+- A flow is triggered in one of these side-effects.
+  - On cleanup, if the request is for create/delete/update, flow trigger is checked
+  - something like `await search({ thisDb, thisCollection, thisAction }) => boolean`
+  - In case of create/delete, the trigger is set to true
+  - In case of update, we check the specific updated record, if it matches the trigger, we set the trigger to true
+  - If the trigger is true, we execute the flow, else do nothing
+- A flow is executed and
+  - Each node is executed in order (sequential execution)
+  - constantly watch for the next node to be executed
