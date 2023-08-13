@@ -9,7 +9,12 @@
     "start": "node ./dist/index.js"
   },
   "dependencies": {
-    "shared": "workspace:^"
+    "shared": "workspace:^",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongoose": "^7.4.2",
+    "mongoose-paginate-v2": "^1.7.31"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^25.0.3",
