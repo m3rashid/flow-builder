@@ -4,10 +4,23 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "pnpm rollup -c",
+    "dev": "pnpm rollup -c -w",
+    "start": "node ./dist/index.js"
   },
-  "dependencies": {},
-  "devDependencies": {},
+  "dependencies": {
+    "shared": "workspace:^"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.3",
+    "@rollup/plugin-run": "^3.0.1",
+    "@rollup/plugin-terser": "^0.4.3",
+    "@rollup/plugin-typescript": "^11.1.2",
+    "rollup": "^3.28.0",
+    "rollup-plugin-includepaths": "^0.2.4",
+    "tslib": "^2.6.1",
+    "typescript": "^5.1.6"
+  },
   "keywords": [],
   "author": "m3rashid",
   "license": "MIT"
