@@ -2,7 +2,8 @@
   "name": "server",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+	"type": "module",
+  "main": "dist/index.js",
   "scripts": {
     "build": "pnpm rollup -c",
     "dev": "pnpm rollup -c -w",
